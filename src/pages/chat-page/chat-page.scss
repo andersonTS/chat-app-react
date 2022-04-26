@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    height: 100vh;
+    .chat-page-container {
+      display: flex;
+      .person-list-container{
+          display: block;
+          width: 30vw;
+      }
+      .chat-container{
+        width: 69.5vw;
+        .person-list-btn{
+          display: none;
+          width: 100px;
+          font-weight: bold;
+          font-size: 20px;
+          position: absolute;
+          top: 25px;
+          left: 10px;
+          border: none;
+          cursor: pointer;
+          img{
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+
+}

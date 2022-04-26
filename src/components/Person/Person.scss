@@ -1,0 +1,28 @@
+.person-container {
+    padding: 10px;
+    border-bottom:  1px solid rgb(184, 183, 183);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    &:hover {
+        background-color: lavender;
+    }
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    div {
+       display: flex; 
+    }
+    .chat-info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+    .data {
+        width: 150px;
+        text-align: right;
+    }
+}

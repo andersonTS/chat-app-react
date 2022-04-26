@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.login-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .start-btn {
+        color: white;
+        font-size: 24px;
+        border: none;
+        background-color: rgb(226, 226, 226);
+        padding: 10px 5px;
+        width: 300px;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        cursor: pointer;
+    }
+}
+
