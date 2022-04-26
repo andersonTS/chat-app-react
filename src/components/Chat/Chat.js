@@ -15,6 +15,16 @@ function Chat(props) {
     setOutgoingMessage('')
   }
 
+  function formatDate(str) {
+    var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let arr = str.split(' ')
+    arr[0] = monthArray.indexOf(arr[0]) + 1
+    arr[1] = +arr[1].slice(0,2)
+    return arr.join('/')
+  }
+
+  console.log(formatDate('Jul 16, 2017'));
+
   useEffect(() => {
     
   })
@@ -29,13 +39,12 @@ function Chat(props) {
       {
         props.chat[0].message
           .map(message => message.incoming ?
-            // <div className="incoming"><img src={props.chat[0].img} alt=""/><div className="incoming-message">{message.text}<br/><div>{message.time}</div></div></div>
             <div key={message.id}>
               <div className="incoming">
                 <img src={props.chat[0].img} alt=""/><div className="incoming-message">{message.text}</div>
               </div>
               <div className="message-time-incomig">
-                {message.time}
+              {formatDate(message.data)} {message.time}
               </div>
             </div>
               :
@@ -44,7 +53,7 @@ function Chat(props) {
                   <div className="outcoming-message">{message.text}</div><img src='https://cdn.pixabay.com/photo/2020/04/17/07/59/cartoon-man-5053708_960_720.png' alt=""/>
                 </div>
                 <div className="message-time-outcoming">
-                  {message.time}
+                {formatDate(message.data)} {message.time}
                 </div>
             </div>
           )
