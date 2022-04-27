@@ -25,6 +25,19 @@ body{
           }
         }
       }
+      .toast-box{
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        border: 5px solid #ccc;
+        background-color: black;
+        max-width: 500px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        opacity: 0.5;
+        color: white;
+      }
     }
 
 }

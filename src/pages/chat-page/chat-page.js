@@ -125,6 +125,8 @@ function ChatPage() {
   const [chatId, setChatId] = useState(conversationInfo[0].id)
   const [allPersonMessage, setAllPersonMessage] = useState('')
   const [sortData, setSortData] = useState(chatInfo)
+  const [incomingMessage, setIncomingMessage] = useState('')
+  const [isTostShow, setIsTostShow] = useState('none')
 
 
   function formatDate(arr) {
@@ -223,15 +225,19 @@ function ChatPage() {
       
       chatInfo.map(
         person => {
-          if(person.id === id)
+          if(person.id === id) {
             setAllPersonMessage(person.message)
+            setIncomingMessage(`Message form  ${person.firstName}: ${newChuckNorrisMsg}`)
+          }
         }
       )
-    }, 15000)
+      setIsTostShow('none')
+    }, 1000)
 
-
+    setTimeout(() => {
+      setIsTostShow('block')
+    }, 20000)
     
-
   }
 
   return (
@@ -247,6 +253,9 @@ function ChatPage() {
           addOutcomingMessage={outcomingMessageHandler}
         />
       </div>
+      <div 
+      style={{display:  isTostShow === 'block' ? 'none' : 'block'}} 
+      className="toast-box">{incomingMessage}</div>
     </div>
   );
 }
