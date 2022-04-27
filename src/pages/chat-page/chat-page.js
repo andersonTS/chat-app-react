@@ -126,7 +126,7 @@ function ChatPage() {
   const [allPersonMessage, setAllPersonMessage] = useState('')
   const [sortData, setSortData] = useState(chatInfo)
   const [incomingMessage, setIncomingMessage] = useState('')
-  const [isTostShow, setIsTostShow] = useState('none')
+  const [isTostShow, setIsTostShow] = useState('block')
 
 
   function formatDate(arr) {
@@ -236,7 +236,7 @@ function ChatPage() {
 
     setTimeout(() => {
       setIsTostShow('block')
-    }, 20000)
+    }, 5000)
     
   }
 
